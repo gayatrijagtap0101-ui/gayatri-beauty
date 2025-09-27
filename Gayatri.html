@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gayatri Beauty — Glow & Glam</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Gayatri Beauty — premium salon & skincare services. Book facials, makeup, hair styling and more.">
+
+  <!-- 💅 CSS Styling -->
+  <style>
+    :root {
+      --accent:#e21d7f;
+      --accent-2:#e3357a;
+      --muted:#666;
+      --bg:#fff;
+      --card:#fff7fb;
+      --radius:14px;
+      --max-width:1100px;
+      --shadow:0 6px 20px rgba(18,18,18,0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Inter", sans-serif;
+      background: linear-gradient(180deg, #fff 0%, #fff6fb 100%);
+      color: #111;
+      line-height: 1.5;
+      padding: 24px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .site { width: 100%; max-width: var(--max-width); }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .logo {
+      width: 60px; height: 60px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), #FFB3D6);
+      display: grid; place-items: center;
+      color: #fff; font-family: "Playfair Display", serif;
+      font-weight: 750; font-size: 20px;
+      box-shadow: var(--shadow);
+    }
+    .brand h1 { font-size: 18px; }
+    .brand p { font-size: 12px; color: var(--muted); }
+
+    nav { display: flex; gap: 16px; }
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+    nav a.cta {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 6px 18px rgba(199,106,152,0.18);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 28px;
+      align-items: start;
+      margin-bottom: 36px;
+    }
+    .hero-card {
+      background: rgba(255,255,255,0.9);
+      padding: 28px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+    .eyebrow { color: var(--accent); font-weight: 700; font-size: 13px; }
+    h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 34px;
+      margin: 12px 0 8px 0;
+      color: #222;
+    }
+    p.lead { color: var(--muted); margin-bottom: 16px; }
+
+    .hero-cta { display: flex; gap: 12px; margin-top: 14px; }
+    .btn {
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+    .btn.primary { background: var(--accent); color: #fff; }
+    .btn.ghost { background: transparent; color: var(--accent); border: 1px solid rgba(199,106,152,0.2); }
+    .btn:hover { opacity: 0.9; }
+
+    .features { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+    .feature {
+      flex: 1 1 150px;
+      background: linear-gradient(180deg,#fff,#fff0f6);
+      padding: 10px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+    }
+    .feature .icon img {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    .feature h4 { font-size: 14px; margin-bottom: 2px; }
+    .feature p { font-size: 12px; color: var(--muted); }
+
+    .booking {
+      background: #fff7fb;
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .booking h3 { margin-bottom: 10px; }
+    .field { margin-bottom: 10px; }
+    .booking input, .booking select {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #f0d8e6;
+      background: transparent;
+      font-size: 14px;
+    }
+    .booking small { color: var(--muted); }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 26px;
+    }
+    .service {
+      background: #fff7fb;
+      padding: 18px;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+    }
+    .service h4 { margin-bottom: 8px; }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin: 24px 0;
+    }
+    .gallery img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+    .testimonial {
+      background: var(--card);
+      padding: 18px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      margin-bottom: 12px;
+    }
+    .testimonial .who { font-weight: 700; }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 12px;
+      border-top: 1px dashed rgba(0,0,0,0.08);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; }
+      .services { grid-template-columns: repeat(2, 1fr); }
+      .gallery { grid-template-columns: repeat(3, 1fr); }
+      .split { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .services { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: repeat(2, 1fr); }
+      nav { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="site">
+
+    <!-- Header -->
+    <header>
+      <a href="#" class="brand">
+        <div class="logo">G</div>
+        <div>
+          <h1>Gayatri Beauty</h1>
+          <p>Glow & Glam Salon</p>
+        </div>
+      </a>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#testimonials">Testimonials</a>
+        <a class="cta" href="#contact">Book Now</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-card">
+        <div class="eyebrow">WELCOME TO GAYALUXE</div>
+        <h2>Beauty, skincare & styling — crafted for your glow.</h2>
+        <p class="lead">Professional facials, bridal makeup, hair treatments and bespoke skincare — all under one roof.</p>
+
+        <div class="features">
+          <div class="feature">
+            <div class="icon"><img src="images/organic.jpg" alt="Organic"></div>
+            <div>
+              <h4>Organic</h4>
+              <p>Clean products, visible results</p>
+            </div>
+          </div>
+          <div class="feature">
+            <div class="icon"><img src="images/bridal.jpg" alt="Bridal"></div>
+            <div>
+              <h4>Bridal</h4>
+              <p>Look radiant on your day</p>
+            </div>
+          </div>
+          <div class="feature">
+            <div class="icon"><img src="images/hairstyle.jpg" alt="Hair Styling"></div>
+            <div>
+              <h4>Hair Styling</h4>
+              <p>Precision cuts & styles</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-cta">
+          <button class="btn primary" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'})">Book Session</button>
+          <button class="btn ghost" onclick="window.location='#gallery'">View Gallery</button>
+        </div>
+      </div>
+
+      <!-- Booking -->
+      <aside class="booking" id="contact">
+        <h3>Quick Booking</h3>
+        <form id="contact-form" onsubmit="return handleBooking(event)">
+          <div class="field">
+            <label>Full name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required>
+          </div>
+
+          <div class="field">
+            <label>Address</label>
+            <input id="address" name="address" type="text" placeholder="Your address" required>
+          </div>
+
+          <div class="field">
+            <label>Service</label>
+            <select id="service" name="service" required>
+              <option value="">Choose Services</option>
+              <option>Signature Facial</option>
+              <option>Bridal Makeup</option>
+              <option>Haircut & Styling</option>
+              <option>Pedicure & Manicure</option>
+              <option>Hair Treatments</option>
+              <option>Keratin Smoothing</option>
+              <option>Organic Facial</option>
+              <option>Skincare Consultation</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>Preferred date</label>
+            <input id="date" name="date" type="date" required>
+            <small>We'll confirm availability soon.</small>
+          </div>
+
+          <div style="display:flex;gap:8px;margin-top:10px">
+            <button type="submit" class="btn primary" style="flex:1">Submit</button>
+            <button type="button" class="btn ghost" style="flex:1" onclick="resetForm()">Reset</button>
+          </div>
+        </form>
+      </aside>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <h3 style="font-family:'Playfair Display',serif;margin-bottom:12px;">Our Services</h3>
+      <div class="services">
+        <article class="service">
+          <h4>Signature Facial</h4>
+          <p>Deep cleansing and hydration tailored to your skin.</p>
+        </article>
+        <article class="service">
+          <h4>Bridal Makeup</h4>
+          <p>Consultation, trial & day-of glam. Long-lasting perfection.</p>
+        </article>
+        <article class="service">
+          <h4>Haircut & Styling</h4>
+          <p>Precision haircuts, blow-dry & styling for every occasion.</p>
+        </article>
+        <article class="service">
+          <h4>Pedicure & Manicure</h4>
+          <p>Relaxing hand & foot spa with nourishing treatments.</p>
+        </article>
+        <article class="service">
+          <h4>Hair Treatments</h4>
+          <p>Keratin smoothing, nourishing masks & more.</p>
+        </article>
+        <article class="service">
+          <h4>Keratin Smoothing</h4>
+          <p>Frizz-free, smooth and shiny hair with long-lasting results.</p>
+        </article>
+        <article class="service">
+          <h4>Organic Facial</h4>
+          <p>Gentle herbal ingredients to refresh and brighten your skin.</p>
+        </article>
+        <article class="service">
+          <h4>Skincare Consultation</h4>
+          <p>Personalized skincare guidance from our beauty experts.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery">
+      <h3 style="font-family:'Playfair Display',serif;margin-bottom:12px;">Gallery</h3>
+      <div class="gallery">
+        <img src="images/Makeup.jpg" alt="Makeup">
+        <img src="images/Faical.jpg" alt="Facial">
+        <img src="images/Bridal Makeup.jpg" alt="Bridal makeup">
+        <img src="images/Styling of Hairs.jpg" alt="Hairs Styling">
+        <img src="images/Haircut.jpg" alt="Haircut">
+        <img src="images/Nail Art.jpg" alt="Nail Art">
+        <img src="images/Hair Spa.jpg" alt="Hair Spa">
+        <img src="images/Body Spa.jpg" alt="Body Spa">
+        <img src="images/Eco-friendly Cosmetics.jpg" alt="Eco-friendly Cosmetics">
+        <img src="images/Menicure.jpg" alt="Menicure">
+        <img src="images/Pedicure.png" alt="Penicure">
+        <img src="images/Saree Draping.jpg" alt="Saree Draping">
+            </div>
+    </section>
+
+    <!-- Testimonials & Contact -->
+    <section class="split">
+  <div>
+    <h3 id="testimonials" style="font-family:'Playfair Display',serif;margin-bottom:12px;">What Clients Say</h3>
+    
+    <div class="testimonial">
+      <div class="who">— Priya Kate</div>
+      <p>"Amazing facial — my skin felt soft for weeks!"</p>
+    </div>
+    <div class="testimonial">
+      <div class="who">— Sana Raut</div>
+      <p>"Bridal makeup looked flawless and lasted all day."</p>
+    </div>
+    <div class="testimonial">
+      <div class="who">— Anjali Mhetre</div>
+      <p>"The hair treatment left my hair silky and smooth. Highly recommend!"</p>
+    </div>
+    <div class="testimonial">
+      <div class="who">— Ritu Patil</div>
+      <p>"I loved the manicure and pedicure services. My nails look perfect!"</p>
+    </div>
+    <div class="testimonial">
+      <div class="who">— Sneha Pawar</div>
+      <p>"Professional staff and amazing ambiance. Felt pampered throughout."</p>
+    </div>
+    <div class="testimonial">
+      <div class="who">— Meera Jagtap</div>
+      <p>"Keratin smoothing worked wonders. My hair has never looked this shiny!"</p>
+    </div>
+    <div class="testimonial">
+      <div class="who">— Pooja Kale</div>
+      <p>"Excellent skincare consultation. They suggested the perfect routine for me."</p>
+    </div>
+      </div>
+
+      <aside class="booking">
+    <h3>Contact & Location</h3>
+    <p class="muted">Gayatri Beauty Salon<br>Mon–Sat: 10am–8pm</p>
+    <p class="muted"><strong>Phone:</strong> +91 9370750700<br><strong>Email:</strong> gayatrijagtap1526@gmail.com</p>
+    <div style="margin-top:20px">
+      <a class="btn primary" href="tel:+919370750700">Call Now</a>
+      <a class="btn ghost" href="mailto:gayatrijagtap1526@gmail.com">Email</a>
+        </div>
+      </aside>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> GAYA BLOOM</div>
+      <div>Designed with ♥ for glowing skin</div>
+    </footer>
+  </div>
+
+  <!-- JS -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function handleBooking(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const address = document.getElementById('address').value.trim();
+      const service = document.getElementById('service').value;
+      const date = document.getElementById('date').value;
+
+      if (!name || !address || !service || !date) {
+        alert('Please fill all fields.');
+        return false;
+      }
+
+      alert('Booking submitted!'); // Temporary without backend
+      e.target.reset();
+    }
+
+    function resetForm() {
+      document.getElementById('contact-form').reset();
+    }
+  </script>
+</body>
+</html>
